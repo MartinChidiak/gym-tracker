@@ -1,0 +1,9 @@
+streamlit
+pandas
+sqlite3
+numpy
+matplotlib
+streamlit-aggrid
+weasyprint
+reportlab
+openpyxl

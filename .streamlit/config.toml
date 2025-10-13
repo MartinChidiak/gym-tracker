@@ -1,0 +1,18 @@
+
+[theme]
+# Tema y colores de la app.
+base = "light"
+primaryColor = "#1f77b4"
+backgroundColor = "#ffffff"
+secondaryBackgroundColor = "#f0f0f0"
+textColor = "#000000"
+font = "sans serif"
+
+[server]
+# Ejecutar sin abrir navegador automáticamente.
+headless = true
+# Permitir acceso desde otros dispositivos en tu red local (útil para probar desde el móvil).
+address = "0.0.0.0"
+port = 8501
+# enableCORS = false   # descomentar solo si necesitas desactivar CORS en desarrollo
+allowRunOnSave = true
