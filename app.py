@@ -18,7 +18,7 @@ def main():
               m.name = 'viewport';
               document.head.appendChild(m);
             }
-            m.setAttribute('content', 'width=device-width, initial-scale=0.85, maximum-scale=5, minimum-scale=0.5, user-scalable=yes');
+            m.setAttribute('content', 'width=device-width, initial-scale=0.75, maximum-scale=5, minimum-scale=0.5, user-scalable=yes');
           } catch(e) {
             // Ignorar errores de inyección
           }
