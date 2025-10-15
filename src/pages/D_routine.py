@@ -88,6 +88,33 @@ def load_routines(path: Path) -> Dict[str, pd.DataFrame]:
 def show():
     st.title("Rutinas predefinidas")
     st.write("Selecciona una rutina y ajusta solo peso/repeticiones/series antes de registrar.")
+    # Forzar las columnas a permanecer en una sola fila dentro del expander
+    # y permitir scroll horizontal en móviles si no caben.
+    st.markdown(
+        """
+        <style>
+        /* Target expanders' columns and force no wrap */
+        [data-testid="stExpander"] .stColumns { flex-wrap: nowrap !important; }
+        [data-testid="stExpander"] [data-testid="column"] {
+            min-width: 0 !important;
+            flex: 1 1 0% !important;
+        }
+        /* Permitir scroll horizontal dentro del contenido del expander */
+        [data-testid="stExpander"] .streamlit-expanderContent {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+        /* Ajustes para evitar que los inputs crezcan demasiado */
+        [data-testid="stExpander"] input, 
+        [data-testid="stExpander"] .stNumberInput,
+        [data-testid="stExpander"] .stTextInput {
+            max-width: 220px;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
+
 
     routines = load_routines(ROUTINES_PATH)
     if not routines:
